@@ -108,18 +108,18 @@
 		138926601E49550700ACE1AA /* SpriteKitGame */ = {
 			isa = PBXGroup;
 			children = (
-				20F1649B1E72729C0019BA74 /* MenuScene.swift */,
-				20F164991E72725F0019BA74 /* MenuScene.sks */,
 				B3ED1C121E6A038600DE5879 /* Fit */,
 				20CD681F1E693B5700BA305F /* Asset */,
 				138926611E49550700ACE1AA /* AppDelegate.swift */,
-				138926671E49550700ACE1AA /* GameScene.swift */,
 				138926691E49550700ACE1AA /* GameViewController.swift */,
+				20F1649B1E72729C0019BA74 /* MenuScene.swift */,
+				138926671E49550700ACE1AA /* GameScene.swift */,
+				131320F91E4C33F80001D8E6 /* GameOverScene.swift */,
 				1389266B1E49550700ACE1AA /* Main.storyboard */,
+				20F164991E72725F0019BA74 /* MenuScene.sks */,
 				1389266E1E49550700ACE1AA /* Assets.xcassets */,
 				138926701E49550700ACE1AA /* LaunchScreen.storyboard */,
 				138926731E49550700ACE1AA /* Info.plist */,
-				131320F91E4C33F80001D8E6 /* GameOverScene.swift */,
 				B3ED1C101E6A021200DE5879 /* GestureRecognizer.swift */,
 				B3FE87A81E6BA338004CD75E /* DrawingView.swift */,
 			);
@@ -416,10 +416,12 @@
 		138926771E49550700ACE1AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4QQT68W5D7;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = SpriteKitGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = onebite.tk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,10 +433,12 @@
 		138926781E49550700ACE1AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4QQT68W5D7;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = SpriteKitGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = onebite.tk;
 				PRODUCT_NAME = "$(TARGET_NAME)";

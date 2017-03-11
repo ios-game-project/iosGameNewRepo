@@ -214,8 +214,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         actual_monster.name = monsterKey
         actual_monster.position = CGPoint(x: actualX, y: size.height + actual_monster.size.height/2)
         
+        //print("before \(self.children.count)")
+        
         // Add the monster to the scene
         addChild(actual_monster)
+        
+        //print("after \(self.children.count)")
+        
         
         // Determine speed of the monster
         let actualDuration = CGFloat(5.0)
@@ -225,11 +230,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let actionMoveDone = SKAction.removeFromParent()
         let loseAction = SKAction.run() {
 
-            let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-            let gameOverScene = GameOverScene(size: self.size, won: false, mark: self.monstersDestroyed)
-            self.view?.presentScene(gameOverScene, transition: reveal)
+//            let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+            
+            
+//            let gameOverScene = GameOverScene(size: self.size, won: false, mark: self.monstersDestroyed)
+//            self.view?.presentScene(gameOverScene, transition: reveal)
+            
+            
+            
+            let controller = self.view?.window?.rootViewController as! GameViewController
+            controller.showGameOverSene(markYouGot: self.monstersDestroyed)
+            
+            
+            
         }
-        actual_monster.run(SKAction.sequence([actionMove, actionMoveDone]))
+        //without lose
+//        actual_monster.run(SKAction.sequence([actionMove,actionMoveDone]))
+        //contain lose
+        actual_monster.run(SKAction.sequence([actionMove, loseAction,actionMoveDone]))
         
     }
     
@@ -329,6 +347,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // remove monster
     func projectileDidCollideWithMonster(name: String) {
+        
+        print(self.children.count)
+        
         self.enumerateChildNodes(withName: name, using: {
             node, stop in
             // do something with node or stop
